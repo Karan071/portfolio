@@ -1,10 +1,12 @@
 import React from 'react';
 import profilePic from '../assets/profile.jpg';
+import { Link } from 'react-router-dom';
+
 
 
 const Navbar = () => {
   return (
-    <div className='mx-auto px-8  max-w-5xl flex p-2 items-center justify-between bg-theme-black text-white rounded-lg'>
+    <div className='mx-auto px-8  max-w-5xl flex p-2 items-center justify-between bg-theme-black text-white rounded-lg drop-shadow-2x font-poppins'>
       {/* Profile part */}
       <div className='flex items-center space-x-4'>
         <img className="w-10 h-10 rounded-full" src={profilePic} alt="profile-pic" />
@@ -14,7 +16,9 @@ const Navbar = () => {
       {/* Nav items */}
       <div className='flex space-x-6'>
         <ul className='flex space-x-6'>
-          <li className="hover:bg-gray-700 px-3 py-2 rounded-md transition">About</li>
+          <li className="hover:bg-gray-700 px-3 py-2 rounded-md transition">
+            <Link to= "/about">About</Link>
+          </li>
           <li className="hover:bg-gray-700 px-3 py-2 rounded-md transition">Experience</li>
           <li className="hover:bg-gray-700 px-3 py-2 rounded-md transition">Skills</li>
           <li className="hover:bg-gray-700 px-3 py-2 rounded-md transition">Projects</li>

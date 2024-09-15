@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import CELLS from 'vanta/dist/vanta.cells.min';
+import TypingEffect from '../components/TypingEffect';
 
 const Dashboard = () => {
   const vantaRef = useRef(null);
@@ -27,6 +28,9 @@ const Dashboard = () => {
   return (
     <div ref={vantaRef} className="w-full h-screen" >
       <Navbar />
+      <div>
+        <TypingEffect/>
+      </div>
     </div>
   );
 };
