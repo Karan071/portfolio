@@ -1,35 +1,43 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
-import CELLS from 'vanta/dist/vanta.cells.min';
+import Nets from 'vanta/dist/vanta.net.min';
 import TypingEffect from '../components/TypingEffect';
 
 const Dashboard = () => {
   const vantaRef = useRef(null);
 
   useEffect(() => {
+    if (!vantaRef.current) return; // Check if the ref is available
+
     const vantaElement = vantaRef.current;
-    const vantaInstance = CELLS({
+    const vantaInstance = Nets({
       el: vantaElement,
       mouseControls: true,
       touchControls: true,
-      gyroControls: true,
-      minHeight: 200,
-      minWidth: 200,
-      scale: 2.50,
-      color1: 0x9c0000,
-      color2: 0x4d0000,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x483fff,
+      points: 20.00,
+      maxDistance: 30.00,
+      showDots: false
     });
 
+    // Clean up Vanta effect on unmount
     return () => {
-      vantaInstance.destroy();
+      if (vantaInstance) {
+        vantaInstance.destroy();
+      }
     };
   }, []);
 
   return (
-    <div ref={vantaRef} className="w-full h-screen" >
+    <div ref={vantaRef} className="relative w-full h-screen">
       <Navbar />
-      <div>
-        <TypingEffect/>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <TypingEffect />
       </div>
     </div>
   );
