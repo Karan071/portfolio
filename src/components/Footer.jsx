@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="container mx-auto text-center">
       <div>
         <div className="flex justify-center items-center space-x-2">
-          <img className="rounded-full w-8 h-8" src={Profile} alt="Profile" />
+          <img className="w-10 h-10 rounded-full object-cover" src={Profile} alt="Profile" />
           <p>Karan Chourasia</p>
         </div>
       </div>
