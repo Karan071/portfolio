@@ -11,6 +11,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        start2p: ['"Press Start 2P"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         'black-theme': 'rgb(39, 39, 42)',

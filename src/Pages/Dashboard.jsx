@@ -7,7 +7,7 @@ const Dashboard = () => {
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!vantaRef.current) return; // Check if the ref is available
+    if (!vantaRef.current) return;
 
     const vantaElement = vantaRef.current;
     const vantaInstance = Nets({
@@ -19,10 +19,11 @@ const Dashboard = () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x483fff,
-      points: 20.00,
+      color: 0xE03C31,
+      backgroundColor : 0xb0b0c,
+      points: 15.00,
       maxDistance: 30.00,
-      showDots: false
+      showDots: true
     });
 
     // Clean up Vanta effect on unmount
@@ -36,7 +37,7 @@ const Dashboard = () => {
   return (
     <div ref={vantaRef} className="relative w-full h-screen">
       <Navbar />
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
         <TypingEffect />
       </div>
     </div>
